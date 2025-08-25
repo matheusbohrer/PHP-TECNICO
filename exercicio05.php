@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -9,29 +9,42 @@
 
 <body>
     <form method="post" action="">
-        <label for="numero">Digite um número:</label>
-        <input type="number" id="numero" name="numero" required>
+        <label for="numero1">Digite o primeiro número:</label>
+        <input type="number" id="numero1" name="numero1" required>
+
+        <label for="numero2">Digite o segundo número:</label>
+        <input type="number" id="numero2" name="numero2" required>
+
         <button type="submit" name="calcular_numero">Calcular</button>
     </form>
 
     <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (isset($_POST['calcular_numero'])) {
-            $numero = $_POST['numero'];
-
-            if ($numero > 0) { 
-                $fatorial = 1;
-                for ($i = 1; $i <= $numero; $i++) {
-                    $fatorial *= $i;
-                }
-                echo "O fatorial de $numero é <strong>$fatorial</strong>.";
-            } elseif ($numero == 0) {
-                echo "O número é <strong>zero</strong>.<br>";
-                echo "O fatorial de 0 é <strong>1</strong>.";
-            } else {
-                echo "O número $numero é <strong>negativo</strong>.<br>";
-                echo "Não existe fatorial definido para números negativos.";
+    function somaDivisores($num)
+    {
+        $soma = 0;
+        for ($i = 1; $i <= $num / 2; $i++) {
+            if ($num % $i == 0) {
+                $soma += $i;
             }
+        }
+        return $soma;
+    }
+
+    if (isset($_POST['calcular_numero'])) {
+        $numero1 = $_POST['numero1'];
+        $numero2 = $_POST['numero2'];
+
+        if ($numero1 > 0 && $numero2 > 0) {
+            $soma1 = somaDivisores($numero1);
+            $soma2 = somaDivisores($numero2);
+
+            if ($soma1 == $numero2 && $soma2 == $numero1) {
+                echo "Os números $numero1 e $numero2 são <strong>números amigos</strong>.";
+            } else {
+                echo "Os números $numero1 e $numero2 <strong>não são números amigos</strong>.";
+            }
+        } else {
+            echo "Informe apenas números inteiros positivos.";
         }
     }
     ?>
