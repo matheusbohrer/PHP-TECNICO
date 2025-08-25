@@ -21,9 +21,9 @@
         $invertida = strrev($palavra);
 
         if ($palavra === $invertida) {
-            echo "<p>✅ A palavra <strong>$palavra</strong> é um palíndromo.</p>";
+            echo "<p>A palavra <strong>$palavra</strong> é um palíndromo.</p>";
         } else {
-            echo "<p>❌ A palavra <strong>$palavra</strong> não é um palíndromo.</p>";
+            echo "<p>A palavra <strong>$palavra</strong> não é um palíndromo.</p>";
         }
     }
     ?>

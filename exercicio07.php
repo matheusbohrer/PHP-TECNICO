@@ -37,9 +37,9 @@
             echo "<p>Divisores próprios de $numero: " . implode(", ", $divs) . " (soma = $soma)</p>";
 
             if ($soma == $numero) {
-                echo "<p>✅ O número $numero é <strong>perfeito</strong>.</p>";
+                echo "<p>O número $numero é <strong>perfeito</strong>.</p>";
             } else {
-                echo "<p>❌ O número $numero <strong>não é perfeito</strong>.</p>";
+                echo "<p>O número $numero <strong>não é perfeito</strong>.</p>";
             }
         } else {
             echo "<p>Informe apenas números inteiros positivos.</p>";

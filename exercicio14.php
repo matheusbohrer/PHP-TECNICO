@@ -20,9 +20,9 @@
         $ano = $_POST['ano'];
 
         if (($ano % 4 == 0 && $ano % 100 != 0) || ($ano % 400 == 0)) {
-            echo "<p>✅ O ano <strong>$ano</strong> é bissexto.</p>";
+            echo "<p>O ano <strong>$ano</strong> é bissexto.</p>";
         } else {
-            echo "<p>❌ O ano <strong>$ano</strong> não é bissexto.</p>";
+            echo "<p>O ano <strong>$ano</strong> não é bissexto.</p>";
         }
     }
     ?>
